@@ -1,0 +1,21 @@
+{
+  "_note": "Placeholder sample data for local development — not a live schedule.",
+  "event": "Italian Grand Prix",
+  "track": "Autodromo Nazionale Monza",
+  "round": 16,
+  "sessions": [
+    { "name": "Practice 1", "start": "2026-09-04T13:30:00Z" },
+    { "name": "Practice 2", "start": "2026-09-04T17:00:00Z" },
+    { "name": "Practice 3", "start": "2026-09-05T12:30:00Z" },
+    { "name": "Qualifying", "start": "2026-09-05T16:00:00Z" },
+    { "name": "Race", "start": "2026-09-06T13:00:00Z" }
+  ],
+  "nextSession": { "name": "Practice 1", "start": "2026-09-04T13:30:00Z" },
+  "classification": [
+    { "position": 1, "code": "VER", "gapToLeader": "Leader", "tyre": "Medium", "trend": "steady" },
+    { "position": 2, "code": "NOR", "gapToLeader": "+1.204", "tyre": "Medium", "trend": "up" },
+    { "position": 3, "code": "PIA", "gapToLeader": "+3.887", "tyre": "Hard", "trend": "down" },
+    { "position": 4, "code": "LEC", "gapToLeader": "+8.112", "tyre": "Medium", "trend": "steady" },
+    { "position": 5, "code": "RUS", "gapToLeader": "+11.940", "tyre": "Hard", "trend": "up" }
+  ]
+}

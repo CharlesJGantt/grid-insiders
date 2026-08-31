@@ -1,0 +1,25 @@
+{
+  "_note": "Placeholder sample data for local development — not live intelligence.",
+  "items": [
+    {
+      "timestamp": "14:02:45 GMT",
+      "text": "Telemetry indicates RB22 clipping early on straights due to high deployment mapping.",
+      "highlight": true
+    },
+    {
+      "timestamp": "13:58:12 GMT",
+      "text": "Ferrari pitwall radio confirms switch to Plan B; anticipated tyre deg higher than sim data.",
+      "highlight": false
+    },
+    {
+      "timestamp": "13:45:00 GMT",
+      "text": "Track temp dropping 2°C, graining phase expected to extend on medium compound.",
+      "highlight": false
+    },
+    {
+      "timestamp": "13:31:20 GMT",
+      "text": "McLaren floor stiffness revisions visible in onboard footage from FP2.",
+      "highlight": false
+    }
+  ]
+}

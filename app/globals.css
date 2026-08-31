@@ -1,0 +1,277 @@
+@import "tailwindcss";
+
+/*
+ * GridInsiders design system — ported from the Stitch export
+ * (_stitch_extract/stitch_grid_insiders_news_portal/gridinsiders/DESIGN.md).
+ * "Race Engineer Interface": Technical Dark Mode, Bento-box modularity,
+ * Inter for headlines, JetBrains Mono for data/body/labels.
+ */
+@theme {
+  /* Colors — Carbon & Velocity palette */
+  --color-surface: #121414;
+  --color-surface-dim: #121414;
+  --color-surface-bright: #37393a;
+  --color-surface-container-lowest: #0c0f0f;
+  --color-surface-container-low: #1a1c1c;
+  --color-surface-container: #1e2020;
+  --color-surface-container-high: #282a2b;
+  --color-surface-container-highest: #333535;
+  --color-on-surface: #e2e2e2;
+  --color-on-surface-variant: #c4c7c7;
+  --color-inverse-surface: #e2e2e2;
+  --color-inverse-on-surface: #2f3131;
+  --color-outline: #8e9192;
+  --color-outline-variant: #444748;
+  --color-surface-tint: #c8c6c5;
+  --color-primary: #c8c6c5;
+  --color-on-primary: #313030;
+  --color-primary-container: #1a1a1a;
+  --color-on-primary-container: #848282;
+  --color-inverse-primary: #5f5e5e;
+  --color-secondary: #ffb59e;
+  --color-on-secondary: #5e1700;
+  --color-secondary-container: #ff571a;
+  --color-on-secondary-container: #521300;
+  --color-tertiary: #00dbe7;
+  --color-on-tertiary: #00363a;
+  --color-tertiary-container: #001e20;
+  --color-on-tertiary-container: #009199;
+  --color-error: #ffb4ab;
+  --color-on-error: #690005;
+  --color-error-container: #93000a;
+  --color-on-error-container: #ffdad6;
+  --color-primary-fixed: #e5e2e1;
+  --color-primary-fixed-dim: #c8c6c5;
+  --color-on-primary-fixed: #1c1b1b;
+  --color-on-primary-fixed-variant: #474746;
+  --color-secondary-fixed: #ffdbd0;
+  --color-secondary-fixed-dim: #ffb59e;
+  --color-on-secondary-fixed: #3a0b00;
+  --color-on-secondary-fixed-variant: #852400;
+  --color-tertiary-fixed: #74f5ff;
+  --color-tertiary-fixed-dim: #00dbe7;
+  --color-on-tertiary-fixed: #002022;
+  --color-on-tertiary-fixed-variant: #004f54;
+  --color-background: #121414;
+  --color-on-background: #e2e2e2;
+  --color-surface-variant: #333535;
+
+  /* Named brand aliases (used in the "Race Engineer Interface" / "Kinetic" variants) */
+  --color-velocity-orange: #ff571a;
+  --color-neon-cyan: #00dbe7;
+  --color-carbon-fiber: #121414;
+  --color-electric-white: #e2e2e2;
+  --color-pit-lane-red: #ffb4ab;
+  --color-sector-green: #74f5ff;
+  --color-status-nominal: #00dbe7;
+  --color-status-warn: #ffb59e;
+  --color-status-evaluated: #c8c6c5;
+
+  /* Fonts — headline (Inter) vs body/data (JetBrains Mono). next/font variables are
+     wired onto <html> in app/layout.tsx as --font-inter / --font-jetbrains-mono. */
+  --font-headline: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-body: var(--font-jetbrains-mono), ui-monospace, "SFMono-Regular", monospace;
+
+  /* Type scale (DESIGN.md `typography`) */
+  --text-headline-display: 72px;
+  --text-headline-display--line-height: 1.1;
+  --text-headline-display--letter-spacing: -0.04em;
+  --text-headline-display--font-weight: 900;
+
+  --text-headline-lg: 40px;
+  --text-headline-lg--line-height: 1.2;
+  --text-headline-lg--letter-spacing: -0.02em;
+  --text-headline-lg--font-weight: 800;
+
+  --text-headline-lg-mobile: 32px;
+  --text-headline-lg-mobile--line-height: 1.2;
+  --text-headline-lg-mobile--font-weight: 800;
+
+  --text-headline-md: 24px;
+  --text-headline-md--line-height: 1.3;
+  --text-headline-md--font-weight: 700;
+
+  --text-body-lg: 18px;
+  --text-body-lg--line-height: 1.6;
+  --text-body-lg--font-weight: 400;
+
+  --text-body-md: 14px;
+  --text-body-md--line-height: 1.5;
+  --text-body-md--font-weight: 400;
+
+  --text-label-caps: 12px;
+  --text-label-caps--line-height: 1.2;
+  --text-label-caps--letter-spacing: 0.1em;
+  --text-label-caps--font-weight: 700;
+
+  --text-telemetry-data: 11px;
+  --text-telemetry-data--line-height: 1;
+  --text-telemetry-data--font-weight: 500;
+
+  --text-status-code: 10px;
+  --text-status-code--line-height: 1;
+  --text-status-code--letter-spacing: 0.05em;
+  --text-status-code--font-weight: 700;
+
+  /* Radius scale. Named up from the Stitch screens' *rendered* config
+     (DEFAULT 0.125rem / lg 0.25rem / xl 0.5rem) rather than the DESIGN.md prose
+     scale, so ported components stay pixel-accurate to the screenshots — except
+     "full", where 9999px (a true pill/circle) is used instead of the screens'
+     0.75rem, which reads as a Stitch export quirk rather than an intentional cap. */
+  --radius-xs: 0.125rem;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.375rem;
+  --radius-lg: 0.5rem;
+  --radius-xl: 0.75rem;
+  --radius-full: 9999px;
+
+  /* Spacing (DESIGN.md `spacing`) */
+  --spacing-unit: 4px;
+  --spacing-gutter: 16px;
+  --spacing-margin-mobile: 16px;
+  --spacing-margin-desktop: 32px;
+  --spacing-module-gap: 2px;
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-on-background);
+}
+
+/* Component-level classes ported from the Stitch <style> blocks */
+.bento-card {
+  background-color: var(--color-surface-container);
+  border: 1px solid var(--color-outline-variant);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.2s ease-in-out;
+}
+.bento-card:hover {
+  border-color: var(--color-tertiary);
+}
+.bento-card.accent:hover {
+  border-color: var(--color-secondary-container);
+}
+
+.glass-panel {
+  background: rgb(18 20 20 / 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.btn-primary {
+  background-color: var(--color-secondary-container);
+  color: var(--color-primary-container);
+  border: 1px solid var(--color-secondary-container);
+  transition: all 0.1s;
+}
+.btn-primary:hover {
+  background-color: #ff6a22;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+  background-color: transparent;
+  color: var(--color-on-background);
+  border: 1px solid var(--color-tertiary);
+  transition: all 0.1s;
+}
+.btn-secondary:hover {
+  background-color: rgb(0 219 231 / 0.1);
+  transform: translateY(-1px);
+}
+
+/* Article body typography — applied to remark-rendered markdown HTML */
+.grid-prose {
+  font-family: var(--font-body);
+  font-size: var(--text-body-lg);
+  line-height: var(--text-body-lg--line-height);
+  color: var(--color-on-surface-variant);
+}
+.grid-prose > * + * {
+  margin-top: 1.25em;
+}
+.grid-prose h2 {
+  font-family: var(--font-headline);
+  font-size: var(--text-headline-md);
+  line-height: var(--text-headline-md--line-height);
+  font-weight: var(--text-headline-md--font-weight);
+  color: var(--color-on-surface);
+  margin-top: 2em;
+}
+.grid-prose h3 {
+  font-family: var(--font-headline);
+  font-weight: 700;
+  color: var(--color-on-surface);
+  margin-top: 1.75em;
+}
+.grid-prose a {
+  color: var(--color-tertiary);
+  text-underline-offset: 3px;
+}
+.grid-prose a:hover {
+  color: var(--color-secondary-container);
+}
+.grid-prose strong {
+  color: var(--color-on-surface);
+}
+.grid-prose ul,
+.grid-prose ol {
+  padding-left: 1.5em;
+}
+.grid-prose li + li {
+  margin-top: 0.5em;
+}
+.grid-prose li {
+  list-style: disc;
+}
+.grid-prose ol li {
+  list-style: decimal;
+}
+.grid-prose blockquote {
+  border-left: 2px solid var(--color-tertiary);
+  padding-left: 1em;
+  color: var(--color-on-surface);
+  font-style: italic;
+}
+.grid-prose code {
+  font-family: var(--font-body);
+  background: var(--color-surface-container-high);
+  padding: 0.15em 0.4em;
+  border-radius: var(--radius-xs);
+  font-size: 0.9em;
+  color: var(--color-tertiary);
+}
+.grid-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--text-body-md);
+}
+.grid-prose th,
+.grid-prose td {
+  border: 1px solid var(--color-outline-variant);
+  padding: 0.5em 0.75em;
+  text-align: left;
+}
+.grid-prose th {
+  font-family: var(--font-body);
+  font-size: var(--text-label-caps);
+  letter-spacing: var(--text-label-caps--letter-spacing);
+  text-transform: uppercase;
+  color: var(--color-on-surface-variant);
+}
+
+/* Technical scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--color-background);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--color-surface-container-highest);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-outline-variant);
+}

@@ -1,0 +1,22 @@
+{
+  "_note": "Placeholder sample data for local development — not live results.",
+  "season": 2026,
+  "updated": "2026-08-24",
+  "drivers": [
+    { "position": 1, "code": "VER", "name": "Max Verstappen", "team": "Red Bull Racing", "points": 312 },
+    { "position": 2, "code": "NOR", "name": "Lando Norris", "team": "McLaren", "points": 289 },
+    { "position": 3, "code": "PIA", "name": "Oscar Piastri", "team": "McLaren", "points": 271 },
+    { "position": 4, "code": "LEC", "name": "Charles Leclerc", "team": "Ferrari", "points": 233 },
+    { "position": 5, "code": "RUS", "name": "George Russell", "team": "Mercedes", "points": 201 },
+    { "position": 6, "code": "HAM", "name": "Lewis Hamilton", "team": "Ferrari", "points": 178 },
+    { "position": 7, "code": "ALO", "name": "Fernando Alonso", "team": "Aston Martin", "points": 132 },
+    { "position": 8, "code": "ANT", "name": "Kimi Antonelli", "team": "Mercedes", "points": 118 }
+  ],
+  "constructors": [
+    { "position": 1, "team": "McLaren", "points": 560 },
+    { "position": 2, "team": "Red Bull Racing", "points": 401 },
+    { "position": 3, "team": "Ferrari", "points": 411 },
+    { "position": 4, "team": "Mercedes", "points": 319 },
+    { "position": 5, "team": "Aston Martin", "points": 158 }
+  ]
+}

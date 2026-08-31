@@ -1,0 +1,6 @@
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Generic driver silhouette placeholder">
+  <rect width="200" height="200" fill="#1e2020"/>
+  <circle cx="100" cy="80" r="38" fill="#333535"/>
+  <path d="M30 190 C30 130 60 108 100 108 C140 108 170 130 170 190 Z" fill="#333535"/>
+  <circle cx="100" cy="80" r="38" fill="none" stroke="#00dbe7" stroke-width="2" opacity="0.6"/>
+</svg>
